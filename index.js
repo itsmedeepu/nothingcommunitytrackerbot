@@ -95,7 +95,8 @@ const sendNewsItem = async (chat_id, newsItem) => {
 };
 
 // Fetch and send the latest news
-const fetchAndSendNews = async (chat_id) => {
+const fetchAndSendNews = async (msg) => {
+  const chat_id = msg.chat.id;
   try {
     const newsArticles = await fetchNewsFromAPI();
 
@@ -156,4 +157,4 @@ setInterval(() => {
   fetchTodayNews(chat_id);
 }, 60 * 1 * 1000);
 
-bot.onText("/news", () => fetchAndSendNews(chat_id));
+bot.onText("/news", (msg) => fetchAndSendNews(chat_id));
