@@ -157,4 +157,4 @@ setInterval(() => {
   fetchTodayNews(chat_id);
 }, 60 * 1 * 1000);
 
-bot.onText("/news", (msg) => fetchAndSendNews(chat_id));
+bot.onText("/news", (msg) => fetchAndSendNews(msg));
