@@ -29,8 +29,15 @@ server.listen(port, () => {
 // Sample command handler for /test command
 bot.onText(/\/test/, async (msg) => {
   console.log("Test command received");
-  bot.sendMessage(msg.chat.id, "This is a test message");
+  bot.sendMessage(msg.chat.id, "Bot is alive ");
   console.log(msg.chat.id);
+});
+
+bot.onText(/\/start/, async (msg) => {
+  bot.sendMessage(
+    msg.chat.id,
+    "Hii Im Nothing's community tracker bot . I will fetch latest news from community .Add me to your group for daily updates"
+  );
 });
 
 /** Utility Functions **/
